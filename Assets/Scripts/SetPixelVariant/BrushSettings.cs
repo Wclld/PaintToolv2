@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
 public class BrushSettings : MonoBehaviour
 {
     public Color Color = Color.black;
