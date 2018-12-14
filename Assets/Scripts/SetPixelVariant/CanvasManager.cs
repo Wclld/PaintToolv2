@@ -50,21 +50,6 @@ public class CanvasManager: MonoBehaviour
         }
     }
 
-    //public void OnDrag(PointerEventData eventData)
-    //{
-    //    Debug.Log("OnDrag");
-    //    var currentMousePosition = GetMousePosition();
-    //    DrawLine(_lastMousePosition, currentMousePosition);
-    //    _lastMousePosition = currentMousePosition;
-    //}
-
-    //public void OnPointerDown(PointerEventData eventData)
-    //{
-    //    Debug.Log("pointer is pressed");
-    //    _lastMousePosition = GetMousePosition();
-    //    DrawPoint(_lastMousePosition);
-    //}
-
     private void DrawPoint(Vector2 position)
     {
         if (IsInBounds(position))
@@ -96,7 +81,6 @@ public class CanvasManager: MonoBehaviour
                 result = true;
             }
         }
-        Debug.Log(String.Format("{0} x: {1}, y: {2}", result, position.x, position.y));
         return result;
     }
     
