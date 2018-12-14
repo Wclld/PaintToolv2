@@ -1,17 +1,20 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Serializable]
 public class BrushSettings : MonoBehaviour
 {
-    public Color Color;
-    public int Size;
+    public Color Color = Color.black;
+    public int Size = 1;
+
     public Color[] Colors
     {
         get
         {
             var count = Mathf.Pow(Size, 2);
-            return Enumerable.Repeat<Color>(Color,(int)count).ToArray();
+            return Enumerable.Repeat(Color,(int)count).ToArray();
         }
     }
 
@@ -19,15 +22,9 @@ public class BrushSettings : MonoBehaviour
     {
         Size = (int)slider.value;
     }
-    public void SetColor(int color)
+
+    public void SetColor(Image image)
     {
-        if (color == 1)
-            Color = Color.red;
-        if (color == 2)
-            Color = Color.green;
-        if (color == 3)
-            Color = Color.black;
-        if (color == 4)
-            Color.a = 0;
+        Color = image.color;
     }
 }
